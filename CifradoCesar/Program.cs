@@ -21,7 +21,19 @@ string CesarCipher(string plainText, int displacement)
 
 string DisplaceAbc(int displacement)
 {
-    string displacedLetters = abc.Substring(0, displacement);
-    string displacedAbc = abc.Substring(displacement);
-    return displacedAbc + displacedLetters;
+    string displacedLetters;
+    string displacedAbc;    
+    if(displacement > 0)
+    {
+        displacedLetters = abc.Substring(0, displacement);
+        displacedAbc = abc.Substring(displacement);
+        return displacedAbc + displacedLetters;
+    }
+    else
+    {
+        displacement = displacement + abc.Length;
+        displacedLetters = abc.Substring(0, (displacement));
+        displacedAbc = abc.Substring(displacement);
+        return displacedAbc + displacedLetters;
+    }    
 }
